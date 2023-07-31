@@ -3,12 +3,12 @@ import {styles} from './styles';
 
 const RoutePoint = ({
   globalName,
-  streetName,
+  // streetName,
   date,
   time,
 }: {
   globalName: string;
-  streetName: string;
+  // streetName: string;
   date: string;
   time: string;
 }) => {
@@ -20,11 +20,11 @@ const RoutePoint = ({
           style={[styles.generalForDest, styles.globalDest]}>
           {globalName}
         </Text>
-        <Text
+        {/* <Text
           numberOfLines={1}
           style={[styles.generalForDest, styles.streetDest]}>
           {streetName}
-        </Text>
+        </Text> */}
       </View>
       <View style={[styles.VStack, styles.VStackDateAlignment]}>
         <Text style={styles.date}>{date}</Text>

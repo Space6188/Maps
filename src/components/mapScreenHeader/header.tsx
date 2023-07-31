@@ -8,30 +8,30 @@ import dayjs from 'dayjs';
 import {useDate} from '../../hooks/useDate';
 
 const MapScreenHeader = () => {
-  const routeInfo = useTypedSelector(store => store.destination);
+  const routeInfo = useTypedSelector(store => store.routeInfo);
 
   const {fullDateNow, timeNow, timeArrived, dateArrived} = useDate({
-    time: routeInfo.routeInfo?.duration,
+    time: routeInfo.info?.time,
   });
+
+  console.log(routeInfo);
 
   return (
     <View style={styles.Header_Holder}>
       <Text style={styles.mainHeaderText}>
-        {!!routeInfo.routeInfo
-          ? 'Ваш маршрут прокладено'
-          : 'Встановіть маршрут'}
+        {!!routeInfo.info ? 'Ваш маршрут прокладено' : 'Встановіть маршрут'}
       </Text>
-      {!!routeInfo.routeInfo && (
+      {!!routeInfo.info && (
         <>
           <RoutePoint
-            streetName={routeInfo.routeInfo.startPointAdress.street}
-            globalName={routeInfo.routeInfo.startPointAdress.global}
+            // streetName={routeInfo.routeInfo.startPointAdress.street}
+            globalName={routeInfo.info!.origin}
             date={fullDateNow}
             time={timeNow}
           />
           <RoutePoint
-            streetName={routeInfo.routeInfo.endPointAdress.street}
-            globalName={routeInfo.routeInfo.endPointAdress.global}
+            // streetName={routeInfo.routeInfo.endPointAdress.street}
+            globalName={routeInfo.info!.dest}
             date={dateArrived}
             time={timeArrived}
           />

@@ -13,16 +13,7 @@ export type MAP_POINTS_ADRESSES = {
 };
 
 export type DESTINATION_TYPES = {
-  routeInfo: {
-    distance: number;
-    duration: number;
-    startPointAdress: MAP_POINTS_ADRESSES;
-    endPointAdress: MAP_POINTS_ADRESSES;
-  } | null;
-  location: {
-    startPoint: string;
-    endPoint: string;
-  };
+  data: null | any;
 };
 
 export type TABS_TYPES = {

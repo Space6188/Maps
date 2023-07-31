@@ -4,6 +4,7 @@ import {COLORS, ROOT_NAVIGATION} from '../constants/constants';
 import CustomModal from '../components/Modal';
 import Router from './Bottom';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Modal from '../components/Modal/ModalContent';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +20,7 @@ const RootNavigator = () => {
           <Stack.Screen name={ROOT_NAVIGATION.TABS} component={Router} />
           <Stack.Screen
             name={ROOT_NAVIGATION.MODAL}
-            component={CustomModal}
+            component={Modal}
             options={{presentation: 'transparentModal', animation: 'none'}}
           />
         </Stack.Navigator>
