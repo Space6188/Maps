@@ -7,7 +7,7 @@ export const api = createApi({
   endpoints: builder => ({
     getRoutes: builder.query<undefined, undefined>({
       query: props =>
-        `json?origin=${props.from}&destination=${props.to}&key=AIzaSyAj11goggJzNE-hva2JOqeTDMYsiz7KkE8&sensor=false&alternatives=true`,
+        `json?origin=${props.from}&destination=${props.to}&key=&sensor=false&alternatives=true`,
     }),
   }),
 });
